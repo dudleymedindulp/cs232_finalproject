@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/hairImageView"
+        android:layout_width="171dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/mouthImageView"
+        android:layout_width="171dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:cropToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eyeImageView" />
+
+    <ImageView
+        android:id="@+id/eyeImageView"
+        android:layout_width="171dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hairImageView" />
+
+    <RadioGroup
+        android:id="@+id/hair_group"
+        android:layout_width="141dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/hairImageView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/spiky_button"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:checked="false"
+            android:onClick="onHairSelection"
+            android:text="Spiky"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:id="@+id/curly_button"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:checked="false"
+            android:onClick="onHairSelection"
+            android:text="Curly"
+            android:textSize="10sp" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/eye_group"
+        android:layout_width="141dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/hairImageView"
+        app:layout_constraintTop_toBottomOf="@+id/hair_group">
+
+        <RadioButton
+            android:id="@+id/brown_eye_button"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:checked="false"
+            android:onClick="onEyeSelection"
+            android:text="Brown"
+            android:textSize="9sp" />
+
+        <RadioButton
+            android:id="@+id/blue_eye_button"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:baselineAligned="false"
+            android:checked="false"
+            android:onClick="onEyeSelection"
+            android:text="Blue"
+            android:textSize="10sp" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/mouth_group"
+        android:layout_width="141dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mouthImageView"
+        app:layout_constraintTop_toBottomOf="@+id/eye_group">
+
+        <RadioButton
+            android:id="@+id/frown_button"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:baselineAligned="false"
+            android:checked="false"
+            android:onClick="onMouthSelection"
+            android:text="Frown"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:id="@+id/smile_button"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:checked="false"
+            android:onClick="onMouthSelection"
+            android:text="Smile"
+            android:textSize="10sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        style="@android:style/Widget.Material.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#F44336"
+        android:onClick="randomizeFace"
+        android:text="Random!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mouth_group" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
